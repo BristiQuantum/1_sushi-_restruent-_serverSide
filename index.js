@@ -14,7 +14,7 @@ app.use(express.json())
 //    mongoDB operation start 
 //    *****************************************
 //=============================================
-const uri = `mongodb+srv://AllData:uFPWPTEc2bqqmNqH@cluster0.27ma61s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.27ma61s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 
 const client = new MongoClient(uri, {
