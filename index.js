@@ -27,25 +27,6 @@ const client = new MongoClient(uri, {
 
 async function run() {
     try {
-        // await client.connect();
-
-        // ===========================
-        // MongoDB CURD operation
-        //   --------------------------------
-        //      0. create a database name and collection name
-        //      1. post / create
-        //          1.1
-        //          1.2
-        //      2. get / read
-        //          1.1 get all data
-        //          1.2 sort by email
-        //      3. post / create
-        //          1.1
-        //          1.2
-        //      4. delete / delete
-        //          1.1 delete 1
-        //          1.2
-        // ============================
 
         //  ----------------------
         //  0. create a database name and collection name
@@ -79,7 +60,7 @@ async function run() {
         })
 
         // booking
-        // sord by email
+        //2.2 sord by email
         app.get('/booking', async (req, res) => {
             const email = req.query?.email;
             console.log(email);
@@ -92,7 +73,7 @@ async function run() {
             res.send(result)
         })
         //booking
-        // get by id
+        // 2.3 get by id
         app.get('/booking/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) };
@@ -125,43 +106,14 @@ async function run() {
     }
 
 
-
-
-
-
 }
 run().catch(console.dir);
-
-
-
-
-
-
-
 
 //============================================
 //    *****************************************
 //    mongoDB operation end 
 //    *****************************************
 //=============================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
